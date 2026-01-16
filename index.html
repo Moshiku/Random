@@ -2,38 +2,93 @@
 <head>
 
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background-color: #807575;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="submit"],
+    input[type="reset"] {
+      background-color: gray;
+      color: white;
+      padding: 10px 15px;
+      border: 1px solid darkgray;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 20px;
+      height: 40px;
+      width: 100px;
+    }
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: rgb(77, 74, 74);
+    }
 
   </style>
 </head>  
 <body>
-<form>
+
+  <form method="post" action="submit"
+  onsubmit="confirm(`Are you sure you want to Submit?`)">
+    <div>
+      <h2><center>Student Information Form</center></h2>
   <label for="StudentID">Please enter your Student ID:</label><br/>
-   <input type="number" id="Num" name="IDNum">
-  </form>
-  <form>
+   <input type="number" id="Num" name="IDNum" mi  n="0" placeholder="01234" required>
+  </div>
+ <br>
+<div>
     <label for="Name">Please enter your name:</label><br/>
-   <input type="text" id="userName" name="userName">
-</form>
-<form>
+   <input type="text" id="userName" name="userName" placeholder="LAST, First MI." required>
+</div>
+   <br>
+<div>
   <label for="Age">Please enter your Birthday:</label><br/>
-   <input type="date" id="Age" name="AgeNum">
-</form>
-<form>
+   <input type="date" id="Age" name="AgeNum" required>
+</div>
+   <br>
+<div>
   <label for="Email">Please enter your Email:</label><br/>
-   <input type="email" id="Email" name="Email">
-</form>
-<form>
-  <label for="Age">Please enter your Phone Numbers:</label><br/>
-   <input type="number" id="Phonenum" name="PhoneNum">
-</form>
-<form>
+   <input type="email" id="Email" name="Email" placeholder="Example@gmail.com" required>
+</div>
+<br>
+<div>
+  <label for="Phone">Please enter your Phone Numbers:</label><br/>
+   <input type="number" id="Phonenum" name="PhoneNum" placeholder="01234" required>
+</div>
+<br>
+<div>
   <label for="Age">Please enter your age:</label><br/>
-   <input type="number" id="Age" name="AgeNum">
-</form>
-<form>
+   <input type="number" id="Age" name="AgeNum" required>
+</div>
+<br>
+<div>
   <label for="GradeLevel">Choose your grade level:</label>
 
-<select name="cars" id="cars">
+<select name="Grade" id="Level" required>
   <option value="seven">7</option>
   <option value="eight">8</option>
   <option value="nine">9</option>
@@ -41,19 +96,44 @@
   <option value="eleven">11</option>
   <option value="twelve">12</option>
 </select>
+</div>
+<br>
+<div>
+  <p style="font-weight: bolder;">INTERN or EXTERN:</p>
+
+  <input type="radio" id="intern" name="outside" value="Intern" required>
+
+  <label for="intern">Intern</label></br>
+
+  <input type="radio" id="extern" name="outside" value="Extern" required>
+
+  <label for="extern">Extern</label></br>
+</div>
+  <br>
+<div>
+  <label for="Clubs">Preferred Organization / Club:</label>
+
+<select name="clubs" id="clubs" required>
+  <option value="Choose">Choose a club</option>
+  <option value="Labuyo">Labuyo</option>
+  <option value="Sigasig">Sigasig</option>
+  <option value="Volant">Volant</option>
+  <option value="Pingpong">Pingpong</option>
+  <option value="English_theatre">English Theatre</option>
+  </select>
+  </div>
+  <br>
+  <br>
+
+  <div>
+  <label for="comments">Why Do You Want To Join? </label></br>
+</div>
+    <textarea id="tArea" name="comments" rows="10" cols="50" onblur="alert('Hey please answer me!')"> </textarea>
+
+    <br>
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    
 </form>
-<form>
-
-  <p>INTERN or EXTERN:</p>
-
-  <input type="radio" id="intern" name="outside" value="Intern">
-
-  <label for="luzon">Intern</label></br>
-
-  <input type="radio" id="extern" name="outside" value="Extern">
-
-  <label for="visayas">Extern</label></br>
-</form>
-
-  </body>
+ </body>
 </html>
